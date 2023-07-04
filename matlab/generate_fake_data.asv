@@ -1,0 +1,20 @@
+% generate fake data simulating a rigid body randomly moving around
+rng(0);
+n = 1000; % number of samples
+
+% state is defined by x = [position; orientation; linear velocity; ang. velocity]
+r_PO_I_0 = zeros(3,1); % position of P relative to O expresesd in I frame (initial)
+R_PO_I_0 = eye(3,3); % orientation of P relative to O expressed in I frame (initial)
+v_PO_I_0 = zeros(3,1); % inertial linear velocity of P relative to O expressed in I frame (initial)
+omega_PO_I_0 = zeros(3,1); % inertial angular velocity of P relative to O expressed in I frame (initial)
+
+% initialize state "vector" histories
+r_PO_I = zeros(3,n); r_PO_I(:,1) = r_PO_I_0;
+R_PO_I = zeros(3,3,n); R_PO_I(:,:,1) = R_PO_I_0;
+v_PO_I = zeros(3,n); v_PO_I(:,1) = v_PO_I_0;
+omega_PO_I = zeros(3,n); omega_PO_I_0(:,1) = omega_PO_I_0;
+
+% simulate the system forward in time according to assumed dynamics
+
+
+% a
